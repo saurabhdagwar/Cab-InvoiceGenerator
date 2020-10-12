@@ -3,10 +3,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class InvoiceServiceTest {
-InvoiceGenerator invoiceGenerator = null;
+InvoiceService invoiceGenerator = null;
     @Before
     public void setUp(){
-        invoiceGenerator = new InvoiceGenerator();
+        invoiceGenerator = new InvoiceService();
     }
     @Test
     public void givingDistance(){
@@ -36,6 +36,16 @@ InvoiceGenerator invoiceGenerator = null;
         int time = 1;
         double fare = invoiceGenerator.calculateFare(distance ,time,"premium");
         Assert.assertEquals(20,fare,0.0);
+    }
+    @Test
+    public void givingUserIdRides_ShouldReturnInvoiceSummary(){
+        String userId = "a@b.com";
+        Ride[] rides = {new Ride(2.0,5),
+                new Ride(0.1,1)};
+      invoiceGenerator.addRides(userId,rides);
+        InvoiceSummary summary = invoiceGenerator.calculateFare(rides,"normal");
+      InvoiceSummary invoiceSummary = invoiceGenerator.getInvoiceSummary(userId);
+        Assert.assertEquals(invoiceSummary,summary);
     }
 }
 

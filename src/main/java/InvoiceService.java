@@ -1,9 +1,13 @@
-public class InvoiceGenerator {
+public class InvoiceService {
 
     private static int cost_per_time ;
     private static double minimum_cost_per_km ;
     private static double minimum_fare ;
+    private  RideRepository rideRepository;
 
+    public InvoiceService(){
+        this.rideRepository = new RideRepository();
+    }
     public double calculateFare(double distance, int time, String type) {
       if(type == "premium"){
            cost_per_time = 2;
@@ -32,4 +36,14 @@ public class InvoiceGenerator {
         }
         return new InvoiceSummary(rides.length,totalFare);
     }
+
+    public void addRides(String userId, Ride[] rides) {
+        rideRepository.addRide(userId,rides);
+    }
+
+    public InvoiceSummary getInvoiceSummary(String userId) {
+   return this.calculateFare(rideRepository.getRides(userId),"normal");
+    }
+
+
 }
