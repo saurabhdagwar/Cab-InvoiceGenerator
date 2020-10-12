@@ -8,7 +8,6 @@ public class InvoiceSummary {
     this.numberRides = numberRides;
     this.totalFare = totalFare;
     this.averageFare = this.totalFare/this.numberRides;
-
     }
 
     @Override
@@ -20,5 +19,4 @@ public class InvoiceSummary {
                 Double.compare(that.totalFare, totalFare) == 0 &&
                 Double.compare(that.averageFare, averageFare) == 0;
     }
-
 }
