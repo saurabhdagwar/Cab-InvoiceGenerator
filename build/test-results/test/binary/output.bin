@@ -1,0 +1,6 @@
+z[MockitoHint] InvoiceServiceTest.givingDistance_forNormalRideUsingMockito_ShouldReturnFare (see javadoc for MockitoHint):
+‡[MockitoHint] 1. Unused -> at InvoiceServiceTest.givingDistance_forNormalRideUsingMockito_ShouldReturnFare(InvoiceServiceTest.java:74)
+
+{[MockitoHint] InvoiceServiceTest.givingDistance_forPremiumRideUsingMockito_ShouldReturnFare (see javadoc for MockitoHint):
+ˆ[MockitoHint] 1. Unused -> at InvoiceServiceTest.givingDistance_forPremiumRideUsingMockito_ShouldReturnFare(InvoiceServiceTest.java:85)
+

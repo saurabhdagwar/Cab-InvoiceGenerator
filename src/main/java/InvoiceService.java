@@ -1,7 +1,7 @@
 public class InvoiceService {
 
-    private static int cost_per_time ;
-    private static double minimum_cost_per_km ;
+    private static  int cost_per_time ;
+    private static   double minimum_cost_per_km ;
     private static double minimum_fare ;
     private  RideRepository rideRepository;
 
